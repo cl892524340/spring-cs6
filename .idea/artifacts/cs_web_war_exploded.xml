@@ -1,6 +1,13 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="cs-web:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/cs_web_war_exploded</output-path>
+    <output-path>$PROJECT_DIR$/cs-web/target/cs-web-1.0-SNAPSHOT</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>cs-web</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -12,6 +19,12 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.2.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:5.2.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.2.0.RELEASE" />
+          <element id="archive" name="cs-service-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="cs-service" />
+          </element>
+          <element id="archive" name="cs-dao-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="cs-dao" />
+          </element>
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.2.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.2.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.2.0.RELEASE" />
@@ -24,7 +37,13 @@
           <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:2.0.2" />
           <element id="library" level="project" name="Maven: com.github.pagehelper:pagehelper:5.1.10" />
           <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:2.0" />
+          <element id="archive" name="cs-entity-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="cs-entity" />
+          </element>
         </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/cs-web/target/cs-web-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="cs-web/web/Web" />
     </root>
